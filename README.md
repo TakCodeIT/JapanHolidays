@@ -1,6 +1,7 @@
 # JapanHolidays
 
-Create a csv file of Japanese national holidays
+Create a csv file of Japanese national holidays.
+It contains holidays of 2022/2023.
 
 ## How to create a csv file No.1
 
@@ -12,17 +13,15 @@ $ docker-compose up
 
 ## How to create a csv file No.2
 
-wget、iconv、grepがある方は、下記を実行してください
+If you can use wget, iconv and, grep, perform the following script.
 
 ```
 $ wget -q -O - https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SJIS -t UTF-8 | tr -d "\r" | grep -e "^202[23]" > holidays.csv
 ```
 
-
-
 # JapanHolidays
 
-日本の祝日csvファイルを作成します。
+日本の祝日csvファイルを作成します。2022年と2023年の祝日を格納します。
 
 ## 作成方法１
 
