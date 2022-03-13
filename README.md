@@ -2,30 +2,47 @@
 
 Create a csv file of Japanese national holidays
 
+## How to create a csv file No.1
 
-# JapanHolidays
-
-“ú–{‚Ìj“úcsvƒtƒ@ƒCƒ‹‚ğì¬‚µ‚Ü‚·B
-
-## ì¬•û–@‚P
-
-docker-compose‚ğg—p‚·‚éê‡‚ÍA‰º‹L‚ğÀs‚µ‚Ä‚­‚¾‚³‚¢
+If you can use docker-compose, simply perform the following script.
 
 ```
 $ docker-compose up
 ```
 
-## ì¬•û–@‚Q
+## How to create a csv file No.2
 
-wgetAiconvAgrep‚ª‚ ‚é•û‚ÍA‰º‹L‚ğÀs‚µ‚Ä‚­‚¾‚³‚¢
+wgetã€iconvã€grepãŒã‚ã‚‹æ–¹ã¯ã€ä¸‹è¨˜ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„
 
 ```
 $ wget -q -O - https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SJIS -t UTF-8 | tr -d "\r" | grep -e "^202[23]" > holidays.csv
 ```
 
-## ƒeƒXƒg•û–@
 
-test.sh‚ğÀs‚µ‚Ä‚­‚¾‚³‚¢
+
+# JapanHolidays
+
+æ—¥æœ¬ã®ç¥æ—¥csvãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã™ã€‚
+
+## ä½œæˆæ–¹æ³•ï¼‘
+
+docker-composeã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã¯ã€ä¸‹è¨˜ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„
+
+```
+$ docker-compose up
+```
+
+## ä½œæˆæ–¹æ³•ï¼’
+
+wgetã€iconvã€grepãŒã‚ã‚‹æ–¹ã¯ã€ä¸‹è¨˜ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„
+
+```
+$ wget -q -O - https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SJIS -t UTF-8 | tr -d "\r" | grep -e "^202[23]" > holidays.csv
+```
+
+## ãƒ†ã‚¹ãƒˆæ–¹æ³•
+
+test.shã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„
 
 ```
 $ ./test.sh
