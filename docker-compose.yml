@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  myholiday:
+    image: alpine:3.15
+    volumes:
+      - .:/worker
+    working_dir: /worker
+    command: /bin/ash -c 'wget -q -O - https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SJIS -t UTF-8 | tr -d "\r" | grep -e "^202[23]" > holidays.csv'
